@@ -14,7 +14,7 @@ let users = [];
 //เริ่มต้นการเชื่อมต่อกับ MySQL
 let conn = null;
 const initMySQL = async () => {
-      const conn = await mysql.createConnection({
+     conn = await mysql.createConnection({
             host: 'localhost',
             user: 'root',
             password: 'root',
@@ -61,7 +61,7 @@ app.get('/testdbnew/',async (req, res) => {
 // path:GET  /users ใช้สำหรับแสดงข้อมูล user ทั้งหมด
 app.get('/users',async (req, res) => { 
     const result = await conn.query('SELECT * FROM users');
-    res.json(result[0]);
+    res.json(result[0])
 });
 
 
@@ -69,7 +69,7 @@ app.get('/users',async (req, res) => {
 app.post('/users',async (req, res) => {
     let user = req.body;
     const result = await conn.query('INSERT INTO users SET ?', user);
-    console.log('result', result);
+    console.log('result', result)
     res.json({
         message: 'Create new user successfully',
         data: result[0]
@@ -78,7 +78,7 @@ app.post('/users',async (req, res) => {
 
 
 // path:GET  /users/:id สำหรับดึงข้อมูล user รายคนออกมา
-app.get('/users', (req, res) => { 
+app.get('/users/:id', (req, res) => { 
    let id = req.params.id;
    //ค้นหา user หรือ index ของ user ที่ต้องการดึงข้อมูล
    let selectedIndex = users.findIndex(user => user.id == id);
