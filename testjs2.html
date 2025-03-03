@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ดึงข้อมูลจาก id -->
+     <!-- ชื่อ <input  
+    type="text" 
+    name="firstname" 
+    value="Nusnee">  -->
+    <!-- นามสกุล <input id="lastname" 
+    class="input"
+    type="text" 
+    name="lastname" 
+    value="Mkn"> --> 
+     <!-- ความสนใจ -->
+    <!-- <input type="checkbox" name="interest" value="อ่านหนังสือ"> อ่านหนังสือ
+    <input type="checkbox" name="interest" value="ดูหนัง"> ดูหนัง
+    <input type="checkbox" name="interest" value="เล่นเกมส์"> เล่นเกมส์
+    <script>
+        // ไม่ต้องใช้ id และ class ใช้ tag แทน
+        /*let firstnameDOM = document.querySelector('input[name="firstname"]');
+        console.log(firstnameDOM.value);*/
+        // ใช้ loop เพื่อดึงข้อมูลจาก input
+       /* for (let i = 0; i < inputsDOM.length; i++) {
+            console.log(inputsDOM[i].value);
+        }*/
+
+        // ใช้ querySelectorAll เพื่อดึงข้อมูลจาก checkbox 
+        let checkboxInputs = document.querySelectorAll('input[name="interest"]');
+        for (let i = 0; i < checkboxInputs.length; i++) {
+            console.log(checkboxInputs[i].value);
+        }
+  
+    </script> -->
+
+        <!-- <button onclick="userClick()">Click me</button>
+    <div onclick="userClick()">div Click</div>
+    <script>
+        function userClick() {
+            console.log('button click');
+        }
+        function userClick() {
+            console.log('div click');
+        }
+    </script> -->
+
+
+    <!-- <input type="radio" name = "gender" value = "ชาย" onchange="ChangeGender()"> ชาย
+    <input type="radio" name = "gender" value = "หญิง" onchange="ChangeGender()"> หญิง
+    <input type="radio" name = "gender" value = "อื่นๆ" onchange="ChangeGender()"> อื่นๆ -->
+
+    /*function ChangeGender() {
+        // เลือก gender ที่มี input ออกมา
+        // ห้ามเว้นวรรคใน querySelector 
+        let genderInputs = document.querySelectorAll('input[name=gender]');
+        let gender = '';
+        // ใครมี checked หมายถึงถูกเลือก ให้เอา value ออกมา
+        for (let i = 0; i < genderInputs.length; i++) {
+            if (genderInputs[i].checked) {
+                gender = genderInputs[i].value;
+            }
+        }
+        console.log('select gender',gender);
+    }*/
+
+        <!-- <div id="hello">Hello <span style="display: none;">abc</span> </div> -->
+    <!-- <script>
+        let helloDOM = document.getElementById('hello');
+        console.log(helloDOM.textContent); // ดึงข้อความทั้งหมดของ element นี้ออกมา
+        console.log(helloDOM.innerText); // ดึงข้อความที่มองเห็นเท่านั้นของ element นี้ออกมา
+        console.log(helloDOM.innerHTML); // ดึงข้อความทั้งหมดของ element นี้ออกมา รวมกับ tag ด้วย
+
+    </script> -->
+</body>
+</html>

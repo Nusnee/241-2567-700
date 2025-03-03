@@ -1,0 +1,18 @@
+docker run -p 80:80 nginx // run nginx on port 80
+docker ps --all // list all container
+docker rm <container ID> // remove container
+docker run -d -p 8070:80 nginx // update port
+docker exec -it <container ID> bash
+ls // list file
+pwd // print working directory
+cd // change directory
+cat <file name> // print file content
+cd ..// go back cd
+exit // exit container
+
+docker stop <container ID> // 
+docker system prune // remove all stopped container
+docker-compose up -d // run container
+docker-compose down // stop container
+
+npm i body-parser // ลง libary 
