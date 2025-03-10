@@ -23,10 +23,10 @@ const initMySQL = async () => {
 
 const validateData = (userData) => {
     let errors = []
-    if (!userData.firstName) {
+    if (!userData.firstname) {
         errors.push('กรุณากรอกชื่อ')
     }
-    if (!userData.lastName) {
+    if (!userData.lastname) {
         errors.push('กรุณากรอกนามสกุล')
     }
     if (!userData.age) {
@@ -70,7 +70,7 @@ app.post('/users', async (req, res) => {
     }catch(error){
         const errorMessage = error.message || 'something went wrong'
         const errors = error.errors || []
-        console.error('error: ', error.message)
+        console.error('error message: ', error.message)
         res.status(500).json({
             message: errorMessage,
             errors: errors
