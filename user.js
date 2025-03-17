@@ -13,14 +13,38 @@ const loadData = async () => {
     const userDOM = document.getElementById('user')
     // 2. นำ user ทั้งหมด โหลดกลับเข้าไปใน html
     let htmlData = '<div>'
-    for (let i = 0; i < response.data.length; i++) {
+        htmlData += `
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+        <tbody>
+    `
+        for (let i = 0; i < response.data.length; i++) {
         let user = response.data[i]
-        htmlData += `<div>
-        ${user.ID} ${user.firstname} ${user.lastname} 
-        <a href = 'index_1.html?id=${user.ID}'><button>Edit</button></a>
-        <button class ='delete' data-id='${user.ID}'>Delete</button>
-        </div>`
+        htmlData += `
+
+        <tr>
+          <td>${user.ID}</td>
+          <td>${user.firstname}</td>
+          <td>${user.lastname}</td>
+          <td>${user.age}</td>
+          <td class='actions'><a href = 'index_1.html?id=${user.ID}'><button>Edit</button></a></td>
+          <td class='actions'><button class='delete' data-id='${user.ID}'>Delete</button></td>
+        </tr>
+        `
     }
+        htmlData += `
+        </tbody>
+        </table> 
+        `
+
     htmlData += '</div>'
     userDOM.innerHTML = htmlData
 
